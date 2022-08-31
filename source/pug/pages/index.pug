@@ -1,0 +1,244 @@
+extends ../base/layout
+
+include ../base/cart
+
+block variables
+  - const title = "ItColors test"
+  //- - const wrapperMods = "modal-open"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = 0
+  -
+    users = ['user-3', 'user-2', 'user-1',]
+    slides = [
+      {
+        title: 'Краски',
+        text: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!'
+      },
+      {
+        title: 'Краски 2',
+        text: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!'
+      },
+      {
+        title: 'Краски 3',
+        text: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!'
+      },
+    ]
+
+    filters = [
+      {
+        id: 'new',
+        checked: true,
+        label: 'Новинки'
+      },
+      {
+        id: 'availability',
+        checked: false,
+        label: 'Есть в наличии'
+      },
+      {
+        id: 'contract',
+        checked: false,
+        label: 'Контрактные'
+      },
+      {
+        id: 'exclusive',
+        checked: false,
+        label: 'Эксклюзивные'
+      },
+      {
+        id: 'sale',
+        checked: false,
+        label: 'Распродажа'
+      },
+    ]
+
+    products = [
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+      },
+    ]
+    productsCart = [
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '2800 ₽',
+        disabled: false,
+      },
+      {
+        img: 'product-img-2',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '4800 ₽',
+        disabled: false,
+      },
+      {
+        img: 'product-img-1',
+        title: 'Краска Wallquest, Brownsone MS90102',
+        price: '3800 ₽',
+        disabled: true,
+      },
+    ]
+    sortList = [
+      {
+        label: 'Сначала недорогие',
+        value: 'cheap',
+      },
+      {
+        label: 'Сначала дорогие',
+        value: 'expansive',
+      },
+      {
+        label: 'Сначала популярные',
+        value: 'popular',
+      },
+      {
+        label: 'Сначала новые',
+        value: 'newer',
+      }
+    ]
+
+block main
+  +cart()
+  main.main
+    .site-breadcrumbs
+      .site-breadcrumbs__wrap.container
+        a(href="") Главная
+        a(href="") Продукты
+        a(href="") Краски
+    section.hero__swiper.swiper#colors-slider
+      h2.visually-hidden title for section
+      .swiper-wrapper
+        each slide in slides
+          .swiper-slide.hero__slide-1
+            .hero__content
+              p.hero__title= slide.title
+              p.hero__text-feature= slide.text
+
+      .swiper-pagination
+
+      .swiper-button-prev.swiper-button
+        +icon('icon-right', 80, 80)
+      .swiper-button-next.swiper-button
+        +icon('icon-right', 80, 80)
+    section.catalog
+      h2.visually-hidden title for section
+      .catalog__wrapper.container
+        .catalog__catalog-content
+          header.catalog-content__catalog-header.catalog-header
+            h3.catalog-header__title.desktop-hidden Краски
+            button(type="button" id='filter-btn').catalog-header__btn.catalog-header__btn--filter Фильтры
+            // aria-expanded="true" - to opne dropdown
+            button(type="button" id='sort-btn').catalog-header__btn.catalog-header__btn--sort-select
+              span Сначала недорогие
+              +icon('icon-drop-arrow', 8, 5)
+            // hidden dropdown
+            .modal-menu.sort-list-values.open
+              each sort, index in sortList
+                if  index === 0
+                  a(data-value=sort.value).sort-list-values__item.sort-list-values__item--active= sort.label
+                else
+                  a(data-value=sort.value).sort-list-values__item= sort.label
+          // catalog list
+          ul.catalog-content__catalog-list.catalog-list
+            each product, index in products
+              li.catalog-list__item.product-card(id=`product${index}`)
+                .product-card__wrap
+                  .product-card__img-wrap
+                    +img('products', `${product.img}`, 'png', 156, 156, `${product.title}`).product-card__img-main
+                    +img('products', 'product-img-hover', 'png', 156, 156, `${product.title}`).product-card__img-hover
+                  h4.product-card__title= product.title
+                  p.product-card__price= product.price
+                  a(href="" aria-label="add product to card").product-card__btn-add-tocart
+                    +icon('icon-add', 16, 16)
+
+        // aside - bottom fixed on mobile
+        form.catalog__aside.filter-wrap
+          each filter in filters
+            .filter-wrap__item
+              +rtSwtich(`${filter.id}`, `${filter.id}`, `${filter.checked}`)
+              label(for=`${filter.id}`).filter-wrap__item-text-label= filter.label
+    template#card-tempalate
+      li.catalog-list__item.product-card(id=`product-index`)
+        .product-card__wrap
+          .product-card__img-wrap
+            +img('products', `product.img`, 'png', 156, 156, `product.title`).product-card__img-main
+            +img('products', 'product-img-hover', 'png', 156, 156, 'product.title').product-card__img-hover
+          h4.product-card__title product.title
+          p.product-card__price product.price
+          a(href="" aria-label="add product to card").product-card__btn-add-tocart
+            +icon('icon-add', 16, 16)

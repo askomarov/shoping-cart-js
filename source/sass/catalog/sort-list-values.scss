@@ -1,0 +1,23 @@
+.sort-list-values {
+  text-transform: uppercase;
+  max-width: 280px;
+  font-weight: 500;
+  font-size: 0.86rem;
+  line-height: 1.07rem;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.sort-list-values__item {
+  display: block;
+  padding: 17px 24px 16px;
+  background-color: $color-white;
+  &:hover:not(.sort-list-values__item--active) {
+    background-color: #63ae88;
+  }
+}
+.sort-list-values__item--active {
+  background-color: $primary-color;
+}

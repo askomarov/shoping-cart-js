@@ -1,0 +1,55 @@
+include ./logo
+
+mixin header(headerMods, currentPage)
+  -
+    var headerLinks = [
+      {
+        href: "",
+        text: "Продукты",
+      },
+      {
+        href: "#",
+        text: "Цвета"
+      },
+      {
+        href: "#",
+        text: "Вдохновение"
+      },
+      {
+        href: "#",
+        text: "Советы",
+      },
+            {
+        href: "#",
+        text: "Найти магазин",
+      },
+    ]
+
+  header.header(class=headerMods)
+    .header__wrapper.container
+      .header__start
+        a(href="#").header__logo
+          img(src="img/icon-logo.svg" width="99" height="21" alt="logo colors")
+      .header__middle
+        nav.header__nav.nav
+          button(type="button" aria-expanded="false").nav__toggle
+            span.nav__toggle-icon
+          .header__menu
+            ul.nav__wrapper
+              each link, index in headerLinks
+                li.nav__item
+                  if(currentPage === index)
+                    a.nav__item-link.nav__item-link--active.link=link.text
+                  else
+                    a.nav__item-link.nav__item-link(href=link.href)=link.text
+            a(href="tel:+74952217769").header-actions__tel
+              span +7 (495) 221-77-69
+              p.hint-text Заказать звонок
+            .header-actions__menu.header-actions-menu
+              a(href="").header-actions-menu__link--search.header-actions-menu__link
+                +icon('icon-search', 20,20)
+              a(href="").header-actions-menu__link--user.header-actions-menu__link
+                +icon('icon-user', 22,22)
+              a(href="").header-actions-menu__link--favorites.header-actions-menu__link
+                +icon('icon-heart', 22,22)
+      a#colors-cart(href="").header-actions__cart-link.not-empty 4

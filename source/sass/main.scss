@@ -1,0 +1,17 @@
+.main {
+  position: relative;
+  flex: 1 0 auto;
+}
+.main-btn {
+  background-color: $primary-color;
+  color: $color-white;
+  border-radius: $btn-border-radius;
+  padding: 5px 8px;
+  &:hover {
+    background-color: #389b5f;
+  }
+}
+
+.main-text-colored {
+  // color: $attention-color;
+}

@@ -1,0 +1,53 @@
+.rt-switch {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  --thumb-size: 8px;
+  --track-padding: 7px;
+  --track-size: calc(var(--thumb-size) * 2 + 6px);
+  --thumb-transition-duration: 0.3s;
+  --thumb-color: #1f2020;
+}
+
+.rt-switch__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: var(--track-padding);
+  background: #f2f2f2;
+  inline-size: var(--track-size);
+  block-size: var(--thumb-size);
+  border-radius: var(--track-size);
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: grid;
+  align-items: center;
+  grid: [track] 1fr / [track] 1fr;
+  transition: background var(--thumb-transition-duration) ease;
+  --thumb-position: 0%;
+  &:hover {
+    background: #e9d7d7;
+  }
+}
+
+.rt-switch__input:checked {
+  --thumb-position: calc(var(--track-size) - 100%);
+  background: $primary-color;
+  &:hover {
+    background: #008179;
+  }
+}
+
+.rt-switch__input::before {
+  content: "";
+  grid-area: track;
+  inline-size: var(--thumb-size);
+  block-size: var(--thumb-size);
+  background: var(--thumb-color);
+  border-radius: 50%;
+  transform: translateX(var(--thumb-position));
+  transition: transform var(--thumb-transition-duration) ease, box-shadow 0.25s ease;
+}

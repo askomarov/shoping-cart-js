@@ -1,0 +1,6 @@
+mixin rtSwtich(id, name, checked)
+  label(class!=attributes.class for=id ).rt-switch
+    if checked === 'true'
+      input(type="checkbox" id=id name=name value=id role="switch" checked).rt-switch__input
+    else
+      input(type="checkbox" id=id name=name value=id role="switch").rt-switch__input

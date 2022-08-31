@@ -1,0 +1,28 @@
+// ////////////////////////////// //  БАЗОВЫЕ СТИЛИ ///////////////////////////////
+@import "fonts";
+@import "variables";
+@import "null";
+@import "usefull";
+@import "container";
+@import "components/rt-switch.scss";
+
+@import "vendors/swiper";
+
+@import "wrapper";
+@import "main.scss";
+@import "site-breadcrumbs";
+//
+@import "blocks/footer";
+@import "header/header";
+@import "header/header-actions";
+
+@import "hero/hero";
+
+@import "catalog/sort-list-values.scss";
+@import "catalog/filter-wrap";
+@import "catalog/product-card";
+@import "catalog/catalog-header";
+@import "catalog/catalog-content";
+@import "catalog/catalog";
+
+@import "cart/cart";
