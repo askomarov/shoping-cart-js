@@ -9,7 +9,7 @@
 ## Основные команды для работы
 
 - installation - `npm i`
-- Starting a local server- `npm start`
+- Starting a local server- `gulp`
 - Building a project without starting a local server - `npm run build`
 - Запуск тестирования на соответствия код-гайдам - `npm test`
 
