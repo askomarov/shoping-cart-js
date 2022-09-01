@@ -124,6 +124,10 @@
   background: #f2f2f2;
   border-radius: 4px;
 
+  svg {
+    pointer-events: none;
+  }
+
   &:hover {
     background-color: $primary-color;
   }
@@ -142,6 +146,7 @@
   justify-content: center;
   background-color: transparent;
   color: #d2d2d2;
+
   @media (min-width: $width-tablet) {
     margin-left: 37px;
   }
@@ -149,6 +154,10 @@
   &:hover,
   &:active {
     color: #1f2020;
+  }
+  
+  svg {
+    pointer-events: none;
   }
 }
 .cart-item__btn-repeat {

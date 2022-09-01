@@ -8,15 +8,22 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
+
+  input:checked + {
+    .sort-list-values__item {
+      background-color: #63ae88;
+    }
+  }
 }
 
 .sort-list-values__item {
+  cursor: pointer;
   display: block;
   padding: 17px 24px 16px;
   background-color: $color-white;
-  &:hover:not(.sort-list-values__item--active) {
-    background-color: #63ae88;
-  }
+  // &:hover:not(.sort-list-values__item--active) {
+  //   background-color: #63ae88;
+  // }
 }
 .sort-list-values__item--active {
   background-color: $primary-color;

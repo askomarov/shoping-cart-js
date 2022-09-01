@@ -155,20 +155,20 @@ block variables
     ]
     sortList = [
       {
-        label: 'Сначала недорогие',
         value: 'cheap',
+        label: 'Сначала недорогие',
       },
       {
-        label: 'Сначала дорогие',
         value: 'expansive',
+        label: 'Сначала дорогие',
       },
       {
-        label: 'Сначала популярные',
         value: 'popular',
+        label: 'Сначала популярные',
       },
       {
-        label: 'Сначала новые',
         value: 'newer',
+        label: 'Сначала новые',
       }
     ]
 
@@ -207,12 +207,14 @@ block main
               span Сначала недорогие
               +icon('icon-drop-arrow', 8, 5)
             // hidden dropdown
-            .modal-menu.sort-list-values.open
+            form.modal-menu.sort-list-values.open
               each sort, index in sortList
                 if  index === 0
-                  a(data-value=sort.value).sort-list-values__item.sort-list-values__item--active= sort.label
+                  input(type="radio", name="sort-type" value=sort.value  id=sort.value checked).visually-hidden
+                  label(for=sort.value).sort-list-values__item= sort.label
                 else
-                  a(data-value=sort.value).sort-list-values__item= sort.label
+                  input(type="radio", name="sort-type" value=sort.value id=sort.value).visually-hidden
+                  label(for=sort.value).sort-list-values__item= sort.label
           // catalog list
           ul.catalog-content__catalog-list.catalog-list
             each product, index in products
