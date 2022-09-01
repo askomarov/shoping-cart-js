@@ -5,30 +5,30 @@ mixin cart()
       button(type="button" aria-label="close cart").site-cart__close-cart
         +icon('icon-close-big', 48, 48)
     .site-cart__cart-actions
-      span.site-cart__items-count 4 товара
+      span.site-cart__items-count 0 товаров
       button(type="button").site-cart__remove-all Очистить список
     .site-cart__list.cart-list
-      each product in productsCart
-        .cart-list__item.cart-item(class!= product.disabled ? 'cart-item--disabled' : '')
-          .cart-item__img-wrap
-            +img('products', `${product.img}`, 'png', 96, 96, `${product.title}`).cart-item__img
-          .cart-item__info
-            h3.cart-item__name= product.title
-            p.cart-item__price= product.price
-          .cart-item__actions
-            button(type="button").cart-item__btn.cart-item__btn--decrease
-              +icon('icon-minus', 16, 16)
-            .cart-item__quantity 2
-            button(type="button").cart-item__btn.cart-item__btn--increase
-              +icon('icon-add', 16, 16)
-          if !product.disabled
-            button(type="button").cart-item__delete
-              +icon('icon-x', 24, 24)
-          else
-            button(type="button").cart-item__btn-repeat
-              +icon('icon-repeat', 24, 24)
+      //- each product in productsCart
+      //-   .cart-list__item.cart-item(class!= product.disabled ? 'cart-item--disabled' : '')
+      //-     .cart-item__img-wrap
+      //-       +img('products', `${product.img}`, 'png', 96, 96, `${product.title}`).cart-item__img
+      //-     .cart-item__info
+      //-       h3.cart-item__name= product.title
+      //-       p.cart-item__price= product.price
+      //-     .cart-item__actions
+      //-       button(type="button").cart-item__btn.cart-item__btn--decrease
+      //-         +icon('icon-minus', 16, 16)
+      //-       .cart-item__quantity 2
+      //-       button(type="button").cart-item__btn.cart-item__btn--increase
+      //-         +icon('icon-add', 16, 16)
+      //-     if !product.disabled
+      //-       button(type="button").cart-item__delete
+      //-         +icon('icon-x', 24, 24)
+      //-     else
+      //-       button(type="button").cart-item__btn-repeat
+      //-         +icon('icon-repeat', 24, 24)
     // cart footer
     footer.site-cart__footer
       span.site-cart__total Итого
-        span.site-cart__total-numbers 14 400₽
+        span.site-cart__total-numbers 0₽
       a(href="#").site-cart__make-order Оформить заказ

@@ -130,7 +130,7 @@
                     </svg></a></div>
               </div>
             </nav>
-          </div><a class="header-actions__cart-link not-empty" id="colors-cart" href="">4</a>
+          </div><a class="header-actions__cart-link not-empty" id="colors-cart">0</a>
         </div>
       </header>
       <section class="site-cart">
@@ -142,91 +142,12 @@
             </svg>
           </button>
         </header>
-        <div class="site-cart__cart-actions"><span class="site-cart__items-count">4 товара</span>
+        <div class="site-cart__cart-actions"><span class="site-cart__items-count">0 товаров</span>
           <button class="site-cart__remove-all" type="button">Очистить список</button>
         </div>
-        <div class="site-cart__list cart-list">
-          <div class="cart-list__item cart-item">
-            <div class="cart-item__img-wrap"><img class="cart-item__img" src="img/products/product-img-1.png" srcset="img/products/product-img-1@2x.png 2x" width="96" height="96" alt="Краска Wallquest, Brownsone MS90102">
-            </div>
-            <div class="cart-item__info">
-              <h3 class="cart-item__name">Краска Wallquest, Brownsone MS90102</h3>
-              <p class="cart-item__price">2800 ₽</p>
-            </div>
-            <div class="cart-item__actions">
-              <button class="cart-item__btn cart-item__btn--decrease" type="button">
-                <svg width="16" height="16" aria-hidden="true">
-                  <use href="#icon-minus"></use>
-                </svg>
-              </button>
-              <div class="cart-item__quantity">2</div>
-              <button class="cart-item__btn cart-item__btn--increase" type="button">
-                <svg width="16" height="16" aria-hidden="true">
-                  <use href="#icon-add"></use>
-                </svg>
-              </button>
-            </div>
-            <button class="cart-item__delete" type="button">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-x"></use>
-              </svg>
-            </button>
-          </div>
-          <div class="cart-list__item cart-item">
-            <div class="cart-item__img-wrap"><img class="cart-item__img" src="img/products/product-img-2.png" srcset="img/products/product-img-2@2x.png 2x" width="96" height="96" alt="Краска Wallquest, Brownsone MS90102">
-            </div>
-            <div class="cart-item__info">
-              <h3 class="cart-item__name">Краска Wallquest, Brownsone MS90102</h3>
-              <p class="cart-item__price">4800 ₽</p>
-            </div>
-            <div class="cart-item__actions">
-              <button class="cart-item__btn cart-item__btn--decrease" type="button">
-                <svg width="16" height="16" aria-hidden="true">
-                  <use href="#icon-minus"></use>
-                </svg>
-              </button>
-              <div class="cart-item__quantity">2</div>
-              <button class="cart-item__btn cart-item__btn--increase" type="button">
-                <svg width="16" height="16" aria-hidden="true">
-                  <use href="#icon-add"></use>
-                </svg>
-              </button>
-            </div>
-            <button class="cart-item__delete" type="button">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-x"></use>
-              </svg>
-            </button>
-          </div>
-          <div class="cart-list__item cart-item cart-item--disabled">
-            <div class="cart-item__img-wrap"><img class="cart-item__img" src="img/products/product-img-1.png" srcset="img/products/product-img-1@2x.png 2x" width="96" height="96" alt="Краска Wallquest, Brownsone MS90102">
-            </div>
-            <div class="cart-item__info">
-              <h3 class="cart-item__name">Краска Wallquest, Brownsone MS90102</h3>
-              <p class="cart-item__price">3800 ₽</p>
-            </div>
-            <div class="cart-item__actions">
-              <button class="cart-item__btn cart-item__btn--decrease" type="button">
-                <svg width="16" height="16" aria-hidden="true">
-                  <use href="#icon-minus"></use>
-                </svg>
-              </button>
-              <div class="cart-item__quantity">2</div>
-              <button class="cart-item__btn cart-item__btn--increase" type="button">
-                <svg width="16" height="16" aria-hidden="true">
-                  <use href="#icon-add"></use>
-                </svg>
-              </button>
-            </div>
-            <button class="cart-item__btn-repeat" type="button">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-repeat"></use>
-              </svg>
-            </button>
-          </div>
-        </div>
+        <div class="site-cart__list cart-list"></div>
         <!-- cart footer-->
-        <footer class="site-cart__footer"><span class="site-cart__total">Итого<span class="site-cart__total-numbers">14 400₽</span></span><a class="site-cart__make-order" href="#">Оформить заказ</a></footer>
+        <footer class="site-cart__footer"><span class="site-cart__total">Итого<span class="site-cart__total-numbers">0₽</span></span><a class="site-cart__make-order" href="#">Оформить заказ</a></footer>
       </section>
       <main class="main">
         <div class="site-breadcrumbs">
@@ -280,8 +201,16 @@
                   </svg>
                 </button>
                 <!-- hidden dropdown-->
-                <div class="modal-menu sort-list-values open"><a class="sort-list-values__item sort-list-values__item--active" data-value="cheap">Сначала недорогие</a><a class="sort-list-values__item" data-value="expansive">Сначала дорогие</a><a class="sort-list-values__item" data-value="popular">Сначала популярные</a><a class="sort-list-values__item" data-value="newer">Сначала новые</a>
-                </div>
+                <form class="modal-menu sort-list-values open">
+                  <input class="visually-hidden" type="radio" name="sort-type" value="cheap" id="cheap" checked>
+                  <label class="sort-list-values__item" for="cheap">Сначала недорогие</label>
+                  <input class="visually-hidden" type="radio" name="sort-type" value="expansive" id="expansive">
+                  <label class="sort-list-values__item" for="expansive">Сначала дорогие</label>
+                  <input class="visually-hidden" type="radio" name="sort-type" value="popular" id="popular">
+                  <label class="sort-list-values__item" for="popular">Сначала популярные</label>
+                  <input class="visually-hidden" type="radio" name="sort-type" value="newer" id="newer">
+                  <label class="sort-list-values__item" for="newer">Сначала новые</label>
+                </form>
               </header>
               <!-- catalog list-->
               <ul class="catalog-content__catalog-list catalog-list">
