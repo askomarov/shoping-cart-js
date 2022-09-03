@@ -130,6 +130,23 @@ if (btnOpenFilters) {
 
 //  CART
 let cartArray = JSON.parse(localStorage.getItem("CART")) || [];
+const btnClearCart = document.querySelector(".site-cart__remove-all");
+const btnMakeOrder = document.querySelector(".site-cart__make-order");
+
+const unblockBtnOrder = () => {
+  if (cartArray.length > 0) {
+    btnMakeOrder.classList.remove("disabled");
+  } else {
+    btnMakeOrder.classList.add("disabled");
+  }
+};
+
+const clearCart = () => {
+  console.log("click");
+  cartArray = [];
+  updateCart();
+  return;
+};
 
 const addItemToCart = (id) => {
   if (cartArray.some((item) => item.id === id)) {
@@ -153,7 +170,6 @@ const onAddBtnHandler = (evt) => {
 
     addItemToCart(id);
     updateCart();
-    // deleteTaskFromHtml(parent, confirmed);
   }
   return;
 };
@@ -207,6 +223,7 @@ const onDeleteBtnHandler = (evt) => {
   evt.stopPropagation();
   if (evt.target.classList.contains("cart-item__delete")) {
     const parent = evt.target.closest("[data-productcart-id]");
+    console.log(parent);
     const id = Number(parent.dataset.productcartId);
 
     removeItemFromCart(id);
@@ -241,6 +258,8 @@ function renderTotalPrice() {
 }
 
 function removeItemFromCart(id) {
+  console.log(id);
+
   cartArray.map((item) => {
     if (item.id === id) {
       cartArray.splice(cartArray.indexOf(item), 1);
@@ -253,7 +272,7 @@ function updateCart() {
   renderCartItems(cartArray, cartList);
   renderTotalPrice();
   renderCartItemCountEl();
-
+  unblockBtnOrder();
   // if (cartArray.length > 0) {
   headerCartLinkCount.textContent = cartArray.length || 0;
   // }
@@ -304,4 +323,6 @@ document.addEventListener("DOMContentLoaded", () => {
   filtersForm.addEventListener("change", onChangeFilterForm);
 
   sortDropdwonMenu.addEventListener("click", onSortFromChange);
+
+  btnClearCart.addEventListener("click", clearCart);
 });

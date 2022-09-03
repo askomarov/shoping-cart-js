@@ -81,7 +81,7 @@
   &:hover {
     background-color: $primary-color;
   }
-  
+
   svg {
     pointer-events: none;
   }
@@ -89,6 +89,7 @@
   @media (min-width: $width-tablet) {
     padding: 6px 30px;
     border-radius: 8px;
+
     svg {
       width: 20px;
       height: 20px;
